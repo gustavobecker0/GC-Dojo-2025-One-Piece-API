@@ -1,4 +1,4 @@
-package com.gustavo.dojo_one_piece.service;
+package com.gustavo.dojo_one_piece.services;
 
 import com.gustavo.dojo_one_piece.models.Pirate;
 import com.gustavo.dojo_one_piece.repositories.PirateRepository;

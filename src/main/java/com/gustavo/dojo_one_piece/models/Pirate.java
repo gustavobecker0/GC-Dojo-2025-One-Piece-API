@@ -20,14 +20,14 @@ public class Pirate {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private pirateRace race;
+    private PirateRace race;
 
     private String tripulation;
 
     @Enumerated(EnumType.STRING)
-    private pirateStatus status;
+    private PirateStatus status;
 
-    enum pirateRace{
+    enum PirateRace{
         HUMANO,
         CIBORGUE,
         MINK,
@@ -35,9 +35,8 @@ public class Pirate {
         TRITAO
     }
 
-    enum pirateStatus{
+    enum PirateStatus{
         ATIVO,
         CAPTURADO
     }
-
 }

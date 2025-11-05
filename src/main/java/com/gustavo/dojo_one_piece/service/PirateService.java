@@ -7,9 +7,10 @@ import java.util.UUID;
 
 public interface PirateService {
 
-    Pirate save(Pirate pirate);
+    Pirate savePirate(Pirate pirate);
     List<Pirate> getPirates();
     Pirate getPirateById(UUID id);
-    void deleteById(UUID id);
+    Pirate updatePirateById(UUID id, Pirate pirate);
+    void deletePirateById(UUID id);
 
 }

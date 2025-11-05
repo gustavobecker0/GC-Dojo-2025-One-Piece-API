@@ -17,7 +17,7 @@ public class PirateServiceImpl implements PirateService {
     }
 
     @Override
-    public Pirate save(Pirate pirate) {
+    public Pirate savePirate(Pirate pirate) {
         return pirateRepository.save(pirate);
     }
 
@@ -32,7 +32,10 @@ public class PirateServiceImpl implements PirateService {
     }
 
     @Override
-    public void deleteById(UUID id) {
+    public Pirate updatePirateById(UUID id, Pirate pirate) { return pirateRepository.save(pirate);}
+
+    @Override
+    public void deletePirateById(UUID id) {
         pirateRepository.deleteById(id);
     }
 }

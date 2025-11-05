@@ -22,7 +22,7 @@ public class Pirate {
     @Enumerated(EnumType.STRING)
     private PirateRace race;
 
-    private String tripulation;
+    private String crew;
 
     @Enumerated(EnumType.STRING)
     private PirateStatus status;

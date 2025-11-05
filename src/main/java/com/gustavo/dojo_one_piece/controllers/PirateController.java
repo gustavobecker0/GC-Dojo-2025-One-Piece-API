@@ -20,7 +20,7 @@ public class PirateController {
 
     @PutMapping
     public Pirate createPirate(@RequestBody Pirate pirate){
-        return pirateService.save(pirate);
+        return pirateService.savePirate(pirate);
     }
 
     @GetMapping
@@ -33,9 +33,14 @@ public class PirateController {
         return pirateService.getPirateById(id);
     }
 
+    @PutMapping("/{id}")
+    public Pirate updatePirate(@PathVariable UUID id, @RequestBody Pirate pirate){
+        return pirateService.updatePirateById(id, pirate);
+    }
+
     @DeleteMapping("/{id}")
     public void deletePirate(@PathVariable UUID id){
-        pirateService.deleteById(id);
+        pirateService.deletePirateById(id);
     }
 
 }

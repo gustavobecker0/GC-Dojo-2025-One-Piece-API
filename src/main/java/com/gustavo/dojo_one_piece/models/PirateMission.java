@@ -26,7 +26,7 @@ public class PirateMission {
     @Enumerated(EnumType.STRING)
     private PirateMissionStatus status;
 
-    enum PirateDangerLevel{
+    public enum PirateDangerLevel{
         D,
         C,
         B,
@@ -34,13 +34,13 @@ public class PirateMission {
         S
     }
 
-    enum PirateMissionType{
+    public enum PirateMissionType{
         EXPLORACAO,
         BATALHA_NAVAL,
         SAQUE
     }
 
-    enum PirateMissionStatus{
+    public enum PirateMissionStatus{
         CONCLUIDA,
         EM_ANDAMENTO
     }

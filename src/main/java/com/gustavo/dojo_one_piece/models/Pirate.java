@@ -27,7 +27,7 @@ public class Pirate {
     @Enumerated(EnumType.STRING)
     private PirateStatus status;
 
-    enum PirateRace{
+    public enum PirateRace{
         HUMANO,
         CIBORGUE,
         MINK,
@@ -35,7 +35,7 @@ public class Pirate {
         TRITAO
     }
 
-    enum PirateStatus{
+    public enum PirateStatus{
         ATIVO,
         CAPTURADO
     }

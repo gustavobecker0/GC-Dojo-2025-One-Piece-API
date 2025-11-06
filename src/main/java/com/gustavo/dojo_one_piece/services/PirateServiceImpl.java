@@ -36,27 +36,27 @@ public class PirateServiceImpl implements PirateService {
 
     @Override
     @Transactional
-    public Pirate updatePirateById(UUID id, Pirate oldPirate) {
-        Pirate newPirate = pirateRepository.findById(id).
+    public Pirate updatePirateById(UUID id, Pirate updatedPirate) {
+        Pirate existingPirate = pirateRepository.findById(id).
                 orElseThrow(() -> new ResourceNotFoundException("Pirate not found with id: " + id));
 
-        if(oldPirate.getName() != null){
-            oldPirate.setName(newPirate.getName());
+        if(updatedPirate.getName() != null){
+            existingPirate.setName(updatedPirate.getName());
         }
 
-        if(newPirate.getCrew() != null){
-            newPirate.setCrew(oldPirate.getCrew());
+        if(updatedPirate.getCrew() != null){
+            existingPirate.setCrew(updatedPirate.getCrew());
         }
 
-        if(newPirate.getRace() != null){
-            newPirate.setRace(oldPirate.getRace());
+        if(updatedPirate.getRace() != null){
+            existingPirate.setRace(updatedPirate.getRace());
         }
 
-        if(newPirate.getStatus()!= null){
-            newPirate.setStatus(oldPirate.getStatus());
+        if(updatedPirate.getStatus()!= null){
+            existingPirate.setStatus(updatedPirate.getStatus());
         }
 
-        return pirateRepository.save(newPirate);
+        return pirateRepository.save(existingPirate);
 
     }
 

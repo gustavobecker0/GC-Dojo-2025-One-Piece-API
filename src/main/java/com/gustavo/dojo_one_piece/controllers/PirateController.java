@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("api/pirates")
 public class PirateController {
 
@@ -18,7 +18,7 @@ public class PirateController {
         this.pirateService = pirateService;
     }
 
-    @PutMapping
+    @PostMapping
     public Pirate createPirate(@RequestBody Pirate pirate){
         return pirateService.savePirate(pirate);
     }

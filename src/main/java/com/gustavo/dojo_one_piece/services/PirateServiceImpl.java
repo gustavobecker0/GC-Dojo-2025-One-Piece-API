@@ -1,6 +1,8 @@
 package com.gustavo.dojo_one_piece.services;
 
+import com.gustavo.dojo_one_piece.dtos.UpdatePirateDTO;
 import com.gustavo.dojo_one_piece.exceptions.ResourceNotFoundException;
+import com.gustavo.dojo_one_piece.mappers.PirateMapper;
 import com.gustavo.dojo_one_piece.models.Pirate;
 import com.gustavo.dojo_one_piece.repositories.PirateRepository;
 import jakarta.transaction.Transactional;
@@ -13,9 +15,11 @@ import java.util.UUID;
 public class PirateServiceImpl implements PirateService {
 
     private final PirateRepository pirateRepository;
+    private final PirateMapper pirateMapper;
 
-    public PirateServiceImpl(PirateRepository pirateRepository) {
+    public PirateServiceImpl(PirateRepository pirateRepository, PirateMapper pirateMapper) {
         this.pirateRepository = pirateRepository;
+        this.pirateMapper = pirateMapper;
     }
 
     @Override
@@ -58,6 +62,17 @@ public class PirateServiceImpl implements PirateService {
 
         return pirateRepository.save(existingPirate);
 
+    }
+
+    @Override
+    @Transactional
+    public Pirate updatePirateByIdUsingDto(UUID id, UpdatePirateDTO dto) {
+        Pirate existing = pirateRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pirate not found with id: " + id));
+
+        pirateMapper.updateEntityFromDto(existing, dto);
+
+        return pirateRepository.save(existing);
     }
 
     @Override

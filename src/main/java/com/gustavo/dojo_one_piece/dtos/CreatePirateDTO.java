@@ -1,4 +1,4 @@
-package com.gustavo.dojo_one_piece.dto;
+package com.gustavo.dojo_one_piece.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

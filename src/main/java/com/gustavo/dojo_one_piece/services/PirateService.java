@@ -1,5 +1,6 @@
 package com.gustavo.dojo_one_piece.services;
 
+import com.gustavo.dojo_one_piece.dtos.UpdatePirateDTO;
 import com.gustavo.dojo_one_piece.models.Pirate;
 
 import java.util.List;
@@ -12,5 +13,6 @@ public interface PirateService {
     Pirate getPirateById(UUID id);
     Pirate updatePirateById(UUID id, Pirate pirate);
     void deletePirateById(UUID id);
+    Pirate updatePirateByIdUsingDto(UUID id, UpdatePirateDTO dto);
 
 }
